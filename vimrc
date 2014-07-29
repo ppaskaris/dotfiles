@@ -37,8 +37,8 @@ set wildmenu
 set wildmode=list:longest,full
 set title
 set laststatus=2
-set cursorline
 set ruler
+set cursorline
 set ttyfast
 set scrolloff=4
 
@@ -67,7 +67,8 @@ catch
 endtry
 
 highlight ExtraWhitespace ctermbg=red guibg=red
-match ExtraWhitespace /\s\+$\| \+\ze\t\|[^\t]\zs\t\+/
+match ExtraWhitespace /\s\+$\| \+\ze\t/
+
 
 "
 " Key binds.
@@ -109,8 +110,5 @@ let g:ctrlp_custom_ignore = {
   \ }
 
 " Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
 let g:syntastic_auto_jump=2
 

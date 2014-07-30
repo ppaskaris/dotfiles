@@ -7,16 +7,11 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
-" Requires running `./install.sh`
-Bundle "Valloric/YouCompleteMe"
 " Requires linting tools like `jshint` to be installed and in the $PATH
 Bundle "scrooloose/syntastic"
-" Requires running `npm install`
-Bundle "marijnh/tern_for_vim"
-
 Bundle "kien/ctrlp.vim"
 Bundle "Raimondi/delimitMate"
-Bundle "chriskempson/tomorrow-theme", {"rtp": "vim/"}
+Bundle "w0ng/vim-hybrid"
 Bundle "pangloss/vim-javascript"
 Bundle "maksimr/vim-jsbeautify"
 Bundle 'einars/js-beautify'
@@ -61,14 +56,14 @@ set smartindent
 "
 " Colors.
 "
+set background=light
 try
-	color Tomorrow-Night
+	color hybrid
 catch
 endtry
 
-highlight ExtraWhitespace ctermbg=red guibg=red
+hi link ExtraWhitespace Error
 match ExtraWhitespace /\s\+$\| \+\ze\t/
-
 
 "
 " Key binds.
@@ -111,4 +106,5 @@ let g:ctrlp_custom_ignore = {
 
 " Syntastic
 let g:syntastic_auto_jump=2
-
+let g:syntastic_error_symbol="!!"
+let g:syntastic_error_symbol="??"

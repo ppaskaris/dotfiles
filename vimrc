@@ -11,6 +11,7 @@ Plugin 'gmarik/Vundle.vim'
 Bundle "scrooloose/syntastic"
 Bundle "kien/ctrlp.vim"
 Bundle "Raimondi/delimitMate"
+Bundle "vim-scripts/Smart-Home-Key"
 Bundle "w0ng/vim-hybrid"
 Bundle "pangloss/vim-javascript"
 Bundle "maksimr/vim-jsbeautify"
@@ -26,7 +27,6 @@ syntax on
 filetype plugin indent on
 set mouse=a
 set clipboard=unnamed
-set hidden
 set showcmd
 set wildmenu
 set wildmode=list:longest,full
@@ -79,6 +79,9 @@ noremap <M-<> :bp!<CR>
 map <ESC>> <M->>
 map! <ESC>> <M->>
 noremap <M->> :bn!<CR>
+
+map <silent> <Esc>[1~ :SmartHomeKey <CR>
+imap <silent> <Esc>[1~ <C-O>:SmartHomeKey<CR>
 
 "
 " Commands.

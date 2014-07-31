@@ -1,0 +1,22 @@
+[user]
+	name = patrick paskaris
+	email = patrick@paskaris.gr
+[core]
+	autocrlf = false
+	pager = cat
+[alias]
+	addremove = add -A
+	st = status
+	co = checkout
+	dif = diff
+	com = commit
+	b = branch
+	l = log
+	coma = commit -a --amend --no-edit
+	unstage = reset HEAD
+	tree = log --graph --decorate --pretty=oneline --abbrev-commit
+	ar = add -A
+[push]
+	default = simple
+[color]
+	ui = true

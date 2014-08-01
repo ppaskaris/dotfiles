@@ -1,2 +1,2 @@
-1. Create a setup.sh script to deploy the dotfiles
-2. Git aliases
+- [ ] Create a setup.sh script to deploy the dotfiles
+- [x] Git aliases

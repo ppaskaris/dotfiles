@@ -9,6 +9,7 @@ Plugin 'gmarik/Vundle.vim'
 
 " Requires linting tools like `jshint` to be installed and in the $PATH
 Bundle "scrooloose/syntastic"
+Bundle "bronson/vim-trailing-whitespace"
 Bundle "kien/ctrlp.vim"
 Bundle "Raimondi/delimitMate"
 Bundle "vim-scripts/Smart-Home-Key"
@@ -62,9 +63,6 @@ try
 catch
 endtry
 
-hi link ExtraWhitespace Error
-match ExtraWhitespace /\s\+$\| \+\ze\t/
-
 "
 " Key binds.
 "
@@ -111,3 +109,6 @@ let g:ctrlp_custom_ignore = {
 let g:syntastic_auto_jump=2
 let g:syntastic_error_symbol="!!"
 let g:syntastic_error_symbol="??"
+
+" DelimitMate
+let g:delimitMate_expand_cr=1

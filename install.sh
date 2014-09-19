@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # symlink the dotfiles \o/
-dotfiles="vimrc gitconfig aliases bashrc3p0 inputrc"
+dotfiles="vimrc gitconfig aliases bashrc3p0 inputrc gitignore"
 for dotfile in $dotfiles ; do
 	ln -nsf ~/dotfiles/$dotfile ~/.$dotfile
 done

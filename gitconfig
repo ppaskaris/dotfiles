@@ -4,6 +4,7 @@
 [core]
 	autocrlf = false
 	pager = cat
+	excludesfile = ~/.gitignore
 [alias]
 	addremove = add -A
 	ar = add -A

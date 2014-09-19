@@ -10,6 +10,7 @@ done
 curl --silent https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -o ~/.git-prompt.sh
 
 # put the bashrc3p0 in the bashrc
+mkdir -p ~/.bin
 if ! grep -Fxq ". ~/.bashrc3p0" ~/.bashrc ; then
 	echo ". ~/.bashrc3p0" >> ~/.bashrc
 fi

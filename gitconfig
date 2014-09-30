@@ -6,8 +6,8 @@
 	pager = cat
 	excludesfile = ~/.gitignore
 [alias]
-	addremove = add -A
-	ar = add -A
+	addremove = add -A .
+	ar = add -A .
 	st = status
 	co = checkout
 	b = branch

@@ -73,10 +73,12 @@ map 0 ^
 
 map <ESC>< <M-<>
 map! <ESC>< <M-<>
-noremap <M-<> :bp!<CR>
+nnoremap <M-<> :bp!<CR>
+inoremap <M-<> <Esc>:bp!<CR>
 map <ESC>> <M->>
 map! <ESC>> <M->>
-noremap <M->> :bn!<CR>
+nnoremap <M->> :bn!<CR>
+inoremap <M->> <Esc>:bn!<CR>
 
 map <silent> <Esc>[1~ :SmartHomeKey <CR>
 imap <silent> <Esc>[1~ <C-O>:SmartHomeKey<CR>

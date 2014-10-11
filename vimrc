@@ -8,14 +8,14 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " Requires linting tools like `jshint` to be installed and in the $PATH
-Bundle "scrooloose/syntastic"
-Bundle "bronson/vim-trailing-whitespace"
-Bundle "kien/ctrlp.vim"
-Bundle "Raimondi/delimitMate"
-Bundle "vim-scripts/Smart-Home-Key"
-Bundle "w0ng/vim-hybrid"
-Bundle "pangloss/vim-javascript"
-Bundle "maksimr/vim-jsbeautify"
+Bundle 'scrooloose/syntastic'
+Bundle 'bronson/vim-trailing-whitespace'
+Bundle 'kien/ctrlp.vim'
+Bundle 'Raimondi/delimitMate'
+Bundle 'vim-scripts/Smart-Home-Key'
+Bundle 'w0ng/vim-hybrid'
+Bundle 'pangloss/vim-javascript'
+Bundle 'maksimr/vim-jsbeautify'
 Bundle 'einars/js-beautify'
 
 call vundle#end()
@@ -37,6 +37,8 @@ set ruler
 set cursorline
 set ttyfast
 set scrolloff=4
+set backupdir=~/.vim-backup
+set dir=~/.vim-swap
 
 "
 " Search.
@@ -80,8 +82,13 @@ map! <ESC>> <M->>
 nnoremap <M->> :bn!<CR>
 inoremap <M->> <Esc>:bn!<CR>
 
+" PuTTY
 map <silent> <Esc>[1~ :SmartHomeKey <CR>
 imap <silent> <Esc>[1~ <C-O>:SmartHomeKey<CR>
+
+" gnome-terminal
+map <silent> <Esc>OH :SmartHomeKey <CR>
+imap <silent> <Esc>OH <C-O>:SmartHomeKey<CR>
 
 "
 " Commands.

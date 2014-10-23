@@ -15,6 +15,10 @@ if ! grep -Fxq ". ~/.bashrc3p0" ~/.bashrc ; then
 	echo ". ~/.bashrc3p0" >> ~/.bashrc
 fi
 
+# setup the vim folders
+mkdir -p $HOME/.vim-backup
+mkdir -p $HOME/.vim-swap
+
 # setup the vundles
 vundir="$HOME/.vim/bundle/Vundle.vim"
 if command -v git >/dev/null 2>&1 ; then

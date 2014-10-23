@@ -39,6 +39,7 @@ set ttyfast
 set scrolloff=4
 set backupdir=~/.vim-backup
 set dir=~/.vim-swap
+set guifont=Menlo:h10
 
 "
 " Search.

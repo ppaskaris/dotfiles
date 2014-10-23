@@ -39,7 +39,6 @@ set ttyfast
 set scrolloff=4
 set backupdir=~/.vim-backup
 set dir=~/.vim-swap
-set guifont=Menlo:h10
 
 "
 " Search.
@@ -54,9 +53,10 @@ set gdefault
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
-set smarttab
+set noexpandtab
 set smartindent
 
+autocmd filetype javascript setlocal sts=2 sw=2 expandtab
 "
 " Colors.
 "
@@ -65,6 +65,14 @@ try
 	color hybrid
 catch
 endtry
+
+"
+" MacVim
+"
+if has('gui_macvim')
+	set guifont=Menlo:h10
+	set macmeta
+endif
 
 "
 " Key binds.

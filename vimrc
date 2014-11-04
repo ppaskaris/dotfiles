@@ -57,6 +57,8 @@ set noexpandtab
 set smartindent
 
 autocmd filetype javascript setlocal sts=2 sw=2 expandtab
+command JavaScriptTab :setlocal sts=4 sw=4 noexpandtab
+
 "
 " Colors.
 "

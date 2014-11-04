@@ -2,8 +2,9 @@ set completion-ignore-case On
 set completion-map-case On
 set show-all-if-ambiguous On
 set show-all-if-unmodified Off
-set menu-complete-display-prefix Off
-TAB: menu-complete
+set menu-complete-display-prefix On
+
+TAB: complete
 
 $if Bash
 	SPACE: magic-space

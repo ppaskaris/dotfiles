@@ -58,7 +58,8 @@ set noexpandtab
 set smartindent
 
 autocmd filetype javascript setlocal sts=2 sw=2 expandtab
-command JavaScriptTab :setlocal sts=4 sw=4 noexpandtab
+command! JST :setlocal sts=4 sw=4 noexpandtab
+command! JSS :setlocal sts=2 sw=2 expandtab
 
 "
 " Colors.
@@ -80,7 +81,6 @@ endif
 "
 " Key binds.
 "
-let mapleader=","
 nnoremap <C-l> :nohl<CR><C-l>
 map Q <Nop>
 map 0 ^
@@ -105,10 +105,6 @@ imap <silent> <Esc>OH <C-O>:SmartHomeKey<CR>
 "
 " Commands.
 "
-
-" Pesky 'invalid command: Q' messages.
-command! Q q
-command! W w
 
 " Will allow you to use :w!! to write to a file using sudo if you forgot to
 " sudo vim file (it will prompt for sudo password when writing)

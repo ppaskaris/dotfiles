@@ -23,3 +23,9 @@
 [gui]
 	fontui = -family \"Lucida Grande\" -size 11 -weight normal -slant roman -underline 0 -overstrike 0
 	fontdiff = -family Menlo -size 11 -weight normal -slant roman -underline 0 -overstrike 0
+[filter "media"]
+	clean = git media clean %f
+	smudge = git media smudge %f
+	required = true
+[merge]
+	tool = kdiff3

@@ -17,6 +17,7 @@ Bundle 'w0ng/vim-hybrid'
 Bundle 'pangloss/vim-javascript'
 Bundle 'maksimr/vim-jsbeautify'
 Bundle 'einars/js-beautify'
+Plugin 'mustache/vim-mustache-handlebars'
 
 call vundle#end()
 filetype plugin indent on
@@ -118,7 +119,7 @@ cmap w!! %!sudo tee > /dev/null %
 " CtrlP
 let g:ctrlp_map = '<C-p>'
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\.git$\|node_modules$',
+  \ 'dir':  '\.git$\|node_modules\|build\|components$',
   \ 'file': '\~$'
   \ }
 
@@ -126,6 +127,7 @@ let g:ctrlp_custom_ignore = {
 let g:syntastic_auto_jump=2
 let g:syntastic_error_symbol="!!"
 let g:syntastic_error_symbol="??"
+let g:syntastic_filetype_map = { "html.mustache": "handlebars" }
 
 " DelimitMate
 let g:delimitMate_expand_cr=1

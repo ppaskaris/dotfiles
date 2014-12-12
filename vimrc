@@ -58,9 +58,8 @@ set shiftwidth=4
 set noexpandtab
 set smartindent
 
-autocmd filetype javascript setlocal sts=2 sw=2 expandtab
-command! JST :setlocal sts=4 sw=4 noexpandtab
-command! JSS :setlocal sts=2 sw=2 expandtab
+autocmd filetype javascript setlocal ts=2 sts=2 sw=2 noexpandtab
+autocmd filetype html setlocal ts=2 sts=2 sw=2 noexpandtab
 
 "
 " Colors.

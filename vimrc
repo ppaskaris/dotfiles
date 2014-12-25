@@ -17,7 +17,9 @@ Bundle 'w0ng/vim-hybrid'
 Bundle 'pangloss/vim-javascript'
 Bundle 'maksimr/vim-jsbeautify'
 Bundle 'einars/js-beautify'
-Plugin 'mustache/vim-mustache-handlebars'
+Bundle 'mustache/vim-mustache-handlebars'
+Bundle 'exu/pgsql.vim'
+Bundle 'tpope/vim-markdown'
 
 call vundle#end()
 filetype plugin indent on
@@ -130,3 +132,6 @@ let g:syntastic_filetype_map = { "html.mustache": "handlebars" }
 
 " DelimitMate
 let g:delimitMate_expand_cr=1
+
+" Markdown
+let g:markdown_fenced_languages = [ 'javascript', 'sh' ]

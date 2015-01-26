@@ -85,7 +85,6 @@ endif
 "
 nnoremap <C-l> :nohl<CR><C-l>
 map Q <Nop>
-map 0 ^
 
 map <ESC>< <M-<>
 map! <ESC>< <M-<>
@@ -97,8 +96,10 @@ nnoremap <M->> :bn!<CR>
 inoremap <M->> <Esc>:bn!<CR>
 
 " PuTTY
-map <silent> <Esc>[1~ :SmartHomeKey <CR>
+map <silent> <Esc>[1~ :SmartHomeKey<CR>
 imap <silent> <Esc>[1~ <C-O>:SmartHomeKey<CR>
+map <silent> <Home> :SmartHomeKey<CR>
+imap <silent> <Home> <C-O>:SmartHomeKey<CR>
 
 " gnome-terminal
 map <silent> <Esc>OH :SmartHomeKey <CR>
@@ -120,7 +121,7 @@ cmap w!! %!sudo tee > /dev/null %
 " CtrlP
 let g:ctrlp_map = '<C-p>'
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\.git$\|node_modules\|build\|components$',
+  \ 'dir':  '\.git$\|node_modules\|build$',
   \ 'file': '\~$'
   \ }
 

@@ -17,7 +17,7 @@
 	unstage = reset HEAD
 	tree = log --graph --decorate --pretty=oneline --abbrev-commit
 [push]
-	default = simple
+	default = current
 [color]
 	ui = true
 [gui]

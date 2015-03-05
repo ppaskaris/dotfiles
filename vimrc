@@ -7,7 +7,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Bundle 'gmarik/Vundle.vim'
 
-Bundle 'chriskempson/base16-vim'
+Bundle 'w0ng/vim-hybrid'
 Bundle 'bronson/vim-trailing-whitespace'
 Bundle 'vim-scripts/Smart-Home-Key'
 
@@ -75,7 +75,7 @@ autocmd filetype html setlocal ts=2 sts=2 sw=2 noexpandtab
 "
 set background=dark
 try
-	color base16-default
+	color hybrid
 catch
 endtry
 
@@ -83,7 +83,7 @@ endtry
 " MacVim
 "
 if has('gui_macvim')
-	set guifont=Menlo:h10
+	set guifont=Menlo:h12
 	set macmeta
 endif
 

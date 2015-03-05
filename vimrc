@@ -6,6 +6,7 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
+Bundle 'chriskempson/base16-vim'
 
 " Requires linting tools like `jshint` to be installed and in the $PATH
 Bundle 'scrooloose/syntastic'
@@ -13,7 +14,6 @@ Bundle 'bronson/vim-trailing-whitespace'
 Bundle 'kien/ctrlp.vim'
 Bundle 'Raimondi/delimitMate'
 Bundle 'vim-scripts/Smart-Home-Key'
-Bundle 'w0ng/vim-hybrid'
 Bundle 'pangloss/vim-javascript'
 Bundle 'maksimr/vim-jsbeautify'
 Bundle 'einars/js-beautify'

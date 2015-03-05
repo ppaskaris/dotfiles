@@ -66,9 +66,9 @@ autocmd filetype html setlocal ts=2 sts=2 sw=2 noexpandtab
 "
 " Colors.
 "
-set background=light
+set background=dark
 try
-	color hybrid
+	color base16-default
 catch
 endtry
 

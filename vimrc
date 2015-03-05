@@ -5,20 +5,24 @@ set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
+Bundle 'gmarik/Vundle.vim'
+
 Bundle 'chriskempson/base16-vim'
+Bundle 'bronson/vim-trailing-whitespace'
+Bundle 'vim-scripts/Smart-Home-Key'
 
 " Requires linting tools like `jshint` to be installed and in the $PATH
 Bundle 'scrooloose/syntastic'
-Bundle 'bronson/vim-trailing-whitespace'
 Bundle 'kien/ctrlp.vim'
-Bundle 'Raimondi/delimitMate'
-Bundle 'vim-scripts/Smart-Home-Key'
+
+Bundle 'jelera/vim-javascript-syntax'
 Bundle 'pangloss/vim-javascript'
-Bundle 'maksimr/vim-jsbeautify'
-Bundle 'einars/js-beautify'
+Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'Raimondi/delimitMate'
+
+Bundle 'elzr/vim-json'
+Bundle 'mxw/vim-jsx'
 Bundle 'mustache/vim-mustache-handlebars'
-Bundle 'exu/pgsql.vim'
 Bundle 'tpope/vim-markdown'
 
 call vundle#end()
@@ -43,12 +47,15 @@ set scrolloff=4
 set backupdir=~/.vim-backup
 set dir=~/.vim-swap
 set hidden
+let g:vim_json_syntax_conceal=0
 
 "
 " Search.
 "
-set incsearch
 set ignorecase
+set smartcase
+set hlsearch
+set incsearch
 set gdefault
 
 "
@@ -58,7 +65,7 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set noexpandtab
-set smartindent
+set smarttab
 
 autocmd filetype javascript setlocal ts=2 sts=2 sw=2 noexpandtab
 autocmd filetype html setlocal ts=2 sts=2 sw=2 noexpandtab
@@ -121,7 +128,7 @@ cmap w!! %!sudo tee > /dev/null %
 " CtrlP
 let g:ctrlp_map = '<C-p>'
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\.git$\|node_modules\|build$',
+  \ 'dir':  '\.git$\|node_modules\|build\|dist',
   \ 'file': '\~$'
   \ }
 
@@ -130,6 +137,8 @@ let g:syntastic_auto_jump=2
 let g:syntastic_error_symbol="!!"
 let g:syntastic_error_symbol="??"
 let g:syntastic_filetype_map = { "html.mustache": "handlebars" }
+let g:syntastic_javascript_checkers = ['jsxhint']
+let g:syntastic_javascript_jsxhint_exec = 'jsx-jshint-wrapper'
 
 " DelimitMate
 let g:delimitMate_expand_cr=1

@@ -38,7 +38,7 @@ else
 fi
 
 # setup the nodes
-modules="jshint"
+modules="jshint react-tools syntastic-react"
 if command -v npm >/dev/null 2>&1 ; then
 	mkdir -p ~/.node
 	npm install --prefix ~/.node $modules

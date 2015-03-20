@@ -86,6 +86,7 @@ endtry
 if has('gui_macvim')
 	set guifont=Menlo:h12
 	set macmeta
+	set guioptions-=r
 endif
 
 "

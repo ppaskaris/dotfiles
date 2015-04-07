@@ -7,23 +7,21 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Bundle 'gmarik/Vundle.vim'
 
-Bundle 'w0ng/vim-hybrid'
-Bundle 'bronson/vim-trailing-whitespace'
-Bundle 'vim-scripts/Smart-Home-Key'
-
-" Requires linting tools like `jshint` to be installed and in the $PATH
-Bundle 'scrooloose/syntastic'
-Bundle 'kien/ctrlp.vim'
-
-Bundle 'jelera/vim-javascript-syntax'
-Bundle 'pangloss/vim-javascript'
-Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'Raimondi/delimitMate'
-
+Bundle 'bronson/vim-trailing-whitespace'
 Bundle 'elzr/vim-json'
-Bundle 'mxw/vim-jsx'
+Bundle 'godlygeek/tabular'
+Bundle 'jelera/vim-javascript-syntax'
+Bundle 'kien/ctrlp.vim'
 Bundle 'mustache/vim-mustache-handlebars'
+Bundle 'mxw/vim-jsx'
+Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'pangloss/vim-javascript'
+Bundle 'scrooloose/syntastic'
+Bundle 'stephpy/vim-yaml'
 Bundle 'tpope/vim-markdown'
+Bundle 'vim-scripts/Smart-Home-Key'
+Bundle 'w0ng/vim-hybrid'
 
 call vundle#end()
 filetype plugin indent on
@@ -103,14 +101,25 @@ endif
 nnoremap <C-l> :nohl<CR><C-l>
 map Q <Nop>
 
-map <ESC>< <M-<>
-map! <ESC>< <M-<>
+map <Esc>< <M-<>
+map! <Esc>< <M-<>
 nnoremap <M-<> :bp!<CR>
 inoremap <M-<> <Esc>:bp!<CR>
-map <ESC>> <M->>
-map! <ESC>> <M->>
+map <Esc>> <M->>
+map! <Esc>> <M->>
 nnoremap <M->> :bn!<CR>
 inoremap <M->> <Esc>:bn!<CR>
+
+function! SafeLocationNext()
+	try
+		lnext
+	catch /^Vim\%((\a\+)\)\=:E553/
+		lfirst
+	catch /^Vim\%((\a\+)\)\=:E\%(776\|42\):/
+	endtry
+endfunction
+
+nnoremap <silent> <Space> :call SafeLocationNext()<CR>
 
 " PuTTY
 map <silent> <Esc>[1~ :SmartHomeKey<CR>
@@ -136,22 +145,19 @@ cmap w!! %!sudo tee > /dev/null %
 "
 
 " CtrlP
-let g:ctrlp_map = '<C-p>'
-let g:ctrlp_custom_ignore = {
+let g:ctrlp_map='<C-p>'
+let g:ctrlp_custom_ignore={
   \ 'dir':  '\.git$\|node_modules\|build\|dist',
   \ 'file': '\~$'
   \ }
 
 " Syntastic
-let g:syntastic_auto_jump=2
-let g:syntastic_error_symbol="!!"
-let g:syntastic_error_symbol="??"
-let g:syntastic_filetype_map = { "html.mustache": "handlebars" }
-let g:syntastic_javascript_checkers = ['jsxhint']
-let g:syntastic_javascript_jsxhint_exec = 'jsx-jshint-wrapper'
+let g:syntastic_filetype_map={"html.mustache": "handlebars"}
+let g:syntastic_javascript_checkers=['eslint']
+let g:syntastic_always_populate_loc_list=1
 
 " DelimitMate
 let g:delimitMate_expand_cr=1
 
 " Markdown
-let g:markdown_fenced_languages = [ 'javascript', 'sh' ]
+let g:markdown_fenced_languages=['javascript', 'sh']

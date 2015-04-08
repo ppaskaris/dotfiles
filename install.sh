@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # symlink the dotfiles \o/
-dotfiles="vimrc gitconfig aliases bashrc3p0 inputrc gitignore"
+dotfiles="vimrc gitconfig aliases bashrc3p0 inputrc gitignore eslintrc"
 for dotfile in $dotfiles ; do
 	ln -nsf ~/dotfiles/$dotfile ~/.$dotfile
 done
@@ -38,7 +38,7 @@ else
 fi
 
 # setup the nodes
-modules="jshint react-tools syntastic-react"
+modules="grunt-cli gulp-cli http-server eslint babel-eslint eslint-plugin-react"
 if command -v npm >/dev/null 2>&1 ; then
 	mkdir -p ~/.node
 	npm install --prefix ~/.node $modules

@@ -1,0 +1,17 @@
+---
+  parser: "babel-eslint"
+  env:
+    browser: true
+    node: true
+  settings:
+    ecmascript: 6
+    jsx: true
+  plugins:
+    - "react"
+  rules:
+    curly: [2, "multi-line"]
+    indent: "2"
+    quotes: [1, "single"]
+    strict: false
+    no-shadow: false
+    no-underscore-dangle: false

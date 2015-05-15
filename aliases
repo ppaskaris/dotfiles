@@ -2,3 +2,7 @@ alias md="mkdir -p"
 alias clear="clear && printf '\e[3J\e\143'"
 alias ls="ls -X --color=auto"
 alias whereami="dig +short myip.opendns.com @resolver1.opendns.com"
+
+mandown () {
+	pandoc -s -f markdown -t man "$1" | man -l -
+}

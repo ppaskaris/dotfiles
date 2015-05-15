@@ -11,6 +11,7 @@ Bundle 'Raimondi/delimitMate'
 Bundle 'bronson/vim-trailing-whitespace'
 Bundle 'elzr/vim-json'
 Bundle 'godlygeek/tabular'
+Bundle 'groenewege/vim-less'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'kien/ctrlp.vim'
 Bundle 'mustache/vim-mustache-handlebars'
@@ -20,7 +21,9 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'scrooloose/syntastic'
 Bundle 'stephpy/vim-yaml'
 Bundle 'tpope/vim-markdown'
+Bundle 'vim-scripts/AdvancedSorters'
 Bundle 'vim-scripts/Smart-Home-Key'
+Bundle 'vim-scripts/ingo-library'
 Bundle 'w0ng/vim-hybrid'
 
 call vundle#end()
@@ -65,9 +68,10 @@ set shiftwidth=4
 set noexpandtab
 set smarttab
 
-autocmd filetype javascript setlocal ts=2 sts=2 sw=2 noexpandtab
-autocmd filetype html setlocal ts=2 sts=2 sw=2 noexpandtab
+autocmd filetype javascript,json setlocal ts=2 sts=2 sw=2 noexpandtab
+autocmd filetype html,css,less setlocal ts=2 sts=2 sw=2 noexpandtab
 autocmd FileType gitcommit call setpos('.', [0, 1, 1, 0])
+autocmd Filetype gitcommit setlocal spell
 
 "
 " gnome-terminal
@@ -147,9 +151,10 @@ cmap w!! %!sudo tee > /dev/null %
 " CtrlP
 let g:ctrlp_map='<C-p>'
 let g:ctrlp_custom_ignore={
-  \ 'dir':  '\.git$\|node_modules\|build\|dist',
+  \ 'dir':  '\.git$\|node_modules\|build\|dist\|jspm_packages',
   \ 'file': '\~$'
   \ }
+let g:ctrlp_follow_symlinks=1
 
 " Syntastic
 let g:syntastic_filetype_map={"html.mustache": "handlebars"}

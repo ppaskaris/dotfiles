@@ -166,3 +166,9 @@ let g:delimitMate_expand_cr=1
 
 " Markdown
 let g:markdown_fenced_languages=['javascript', 'sh']
+
+" Indent Guides
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=235
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=236
+autocmd VimEnter * :IndentGuidesEnable

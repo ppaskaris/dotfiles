@@ -21,8 +21,8 @@
 [color]
 	ui = true
 [gui]
-	fontui = -family \"Lucida Grande\" -size 11 -weight normal -slant roman -underline 0 -overstrike 0
-	fontdiff = -family Menlo -size 11 -weight normal -slant roman -underline 0 -overstrike 0
+	fontui = -family Cantarell -size 11 -weight normal -slant roman -underline 0 -overstrike 0
+	fontdiff = -family \"Liberation Mono\" -size 11 -weight normal -slant roman -underline 0 -overstrike 0
 [filter "media"]
 	clean = git media clean %f
 	smudge = git media smudge %f

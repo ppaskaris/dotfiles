@@ -7,23 +7,24 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Bundle 'gmarik/Vundle.vim'
 
-Bundle 'Raimondi/delimitMate'
 Bundle 'bronson/vim-trailing-whitespace'
 Bundle 'elzr/vim-json'
 Bundle 'godlygeek/tabular'
 Bundle 'groenewege/vim-less'
 Bundle 'jelera/vim-javascript-syntax'
+Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
 Bundle 'mustache/vim-mustache-handlebars'
 Bundle 'mxw/vim-jsx'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'pangloss/vim-javascript'
+Bundle 'Raimondi/delimitMate'
 Bundle 'scrooloose/syntastic'
 Bundle 'stephpy/vim-yaml'
 Bundle 'tpope/vim-markdown'
 Bundle 'vim-scripts/AdvancedSorters'
-Bundle 'vim-scripts/Smart-Home-Key'
 Bundle 'vim-scripts/ingo-library'
+Bundle 'vim-scripts/Smart-Home-Key'
 Bundle 'w0ng/vim-hybrid'
 
 call vundle#end()
@@ -62,29 +63,14 @@ set gdefault
 "
 " Indentation.
 "
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-set noexpandtab
-set smarttab
-
-autocmd filetype javascript,json setlocal ts=2 sts=2 sw=2 noexpandtab
-autocmd filetype html,css,less setlocal ts=2 sts=2 sw=2 noexpandtab
+set ts=2 sts=2 sw=2 noet
+autocmd FileType coffee setl ts=2 sts=2 sw=2 et
 autocmd FileType gitcommit call setpos('.', [0, 1, 1, 0])
-autocmd Filetype gitcommit setlocal spell
-
-"
-" gnome-terminal
-"
-
-if $COLORTERM == 'gnome-terminal'
-	set t_Co=256
-endif
+autocmd Filetype gitcommit setl spell
 
 "
 " Colors.
 "
-set background=dark
 try
 	color hybrid
 catch
@@ -143,6 +129,9 @@ imap <silent> <Esc>OH <C-O>:SmartHomeKey<CR>
 " sudo vim file (it will prompt for sudo password when writing)
 " http://stackoverflow.com/questions/95072/what-are-your-favorite-vim-tricks/96492#96492
 cmap w!! %!sudo tee > /dev/null %
+
+" Formats JSON with tabs for indentation.
+command! Json %!json -o json-tab
 
 "
 " Plugins

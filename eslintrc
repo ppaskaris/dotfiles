@@ -1,28 +1,24 @@
 {
-	"parser": "babel-eslint",
+	"extends": "eslint:recommended",
 	"env": {
-		"browser" : true,
-		"node"    : true
+		"browser": true
 	},
-	"settings": {
-		"ecmascript" : 6,
-		"jsx"        : true
+	"ecmaFeatures": {
+		"arrowFunctions": true,
+		"blockBindings": true,
+		"classes": true,
+		"defaultParams": true,
+		"destructuring": true,
+		"forOf": true,
+		"jsx": true,
+		"modules": true,
+		"restParams": true,
+		"templateStrings": true
 	},
 	"plugins": [
 		"react"
 	],
 	"rules": {
-		"curly"                       : [2, "multi-line"],
-		"indent"                      : [1, "tab", {"indentSwitchCase": true}],
-		"new-cap"                     : 0,
-		"no-mixed-spaces-and-tabs"    : [1, "smart-tabs"],
-		"no-shadow"                   : 0,
-		"no-underscore-dangle"        : 0,
-		"no-unused-vars"              : [2, {"args": "none"}],
-		"no-use-before-define"        : [2, "nofunc"],
-		"quotes"                      : 0,
-		"space-after-keywords"        : [1, "always"],
-		"space-before-function-paren" : [1, {"anonymous": "always", "named": "never"}],
-		"strict"                      : 0
+		"react/jsx-uses-react": 2
 	}
 }

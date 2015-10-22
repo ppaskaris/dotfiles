@@ -1,24 +1,12 @@
 {
 	"extends": "eslint:recommended",
 	"env": {
-		"browser": true
+		"node": true
 	},
-	"ecmaFeatures": {
-		"arrowFunctions": true,
-		"blockBindings": true,
-		"classes": true,
-		"defaultParams": true,
-		"destructuring": true,
-		"forOf": true,
-		"jsx": true,
-		"modules": true,
-		"restParams": true,
-		"templateStrings": true
-	},
-	"plugins": [
-		"react"
-	],
+	"ecmaFeatures": {},
+	"plugins": [],
 	"rules": {
-		"react/jsx-uses-react": 2
+		"semi": 2,
+		"semi-spacing": [2, {"before":false, "after": true}]
 	}
 }

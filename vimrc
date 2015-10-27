@@ -7,24 +7,22 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Bundle 'gmarik/Vundle.vim'
 
+Bundle 'Raimondi/delimitMate'
 Bundle 'bronson/vim-trailing-whitespace'
 Bundle 'elzr/vim-json'
 Bundle 'godlygeek/tabular'
 Bundle 'groenewege/vim-less'
 Bundle 'jelera/vim-javascript-syntax'
-Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
 Bundle 'mustache/vim-mustache-handlebars'
 Bundle 'mxw/vim-jsx'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'pangloss/vim-javascript'
-Bundle 'Raimondi/delimitMate'
 Bundle 'scrooloose/syntastic'
-Bundle 'stephpy/vim-yaml'
 Bundle 'tpope/vim-markdown'
 Bundle 'vim-scripts/AdvancedSorters'
-Bundle 'vim-scripts/ingo-library'
 Bundle 'vim-scripts/Smart-Home-Key'
+Bundle 'vim-scripts/ingo-library'
 Bundle 'w0ng/vim-hybrid'
 
 call vundle#end()
@@ -75,6 +73,8 @@ try
 	color hybrid
 catch
 endtry
+
+set background=dark
 
 "
 " MacVim

@@ -38,7 +38,7 @@ else
 fi
 
 # setup the nodes
-modules="coffee-script grunt-cli gulp-cli http-server eslint babel-eslint eslint-plugin-react react-tools"
+modules="grunt-cli gulp-cli http-server eslint babel-eslint eslint-plugin-react react-tools"
 if command -v npm >/dev/null 2>&1 ; then
 	mkdir -p ~/.node
 	npm install --prefix ~/.node $modules

@@ -5,25 +5,26 @@ set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-Bundle 'gmarik/Vundle.vim'
+Plugin 'gmarik/Vundle.vim'
 
-Bundle 'Raimondi/delimitMate'
-Bundle 'bronson/vim-trailing-whitespace'
-Bundle 'elzr/vim-json'
-Bundle 'godlygeek/tabular'
-Bundle 'groenewege/vim-less'
-Bundle 'jelera/vim-javascript-syntax'
-Bundle 'kien/ctrlp.vim'
-Bundle 'mustache/vim-mustache-handlebars'
-Bundle 'mxw/vim-jsx'
-Bundle 'nathanaelkane/vim-indent-guides'
-Bundle 'pangloss/vim-javascript'
-Bundle 'scrooloose/syntastic'
-Bundle 'tpope/vim-markdown'
-Bundle 'vim-scripts/AdvancedSorters'
-Bundle 'vim-scripts/Smart-Home-Key'
-Bundle 'vim-scripts/ingo-library'
-Bundle 'w0ng/vim-hybrid'
+Plugin 'Raimondi/delimitMate'
+Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'elzr/vim-json'
+Plugin 'godlygeek/tabular'
+Plugin 'groenewege/vim-less'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'kien/ctrlp.vim'
+Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'mxw/vim-jsx'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'othree/yajs.vim'
+Plugin 'rschmukler/pangloss-vim-indent'
+Plugin 'scrooloose/syntastic'
+Plugin 'tpope/vim-markdown'
+Plugin 'vim-scripts/AdvancedSorters'
+Plugin 'vim-scripts/Smart-Home-Key'
+Plugin 'vim-scripts/ingo-library'
+Plugin 'w0ng/vim-hybrid'
 
 call vundle#end()
 filetype plugin indent on
@@ -48,6 +49,7 @@ set backupdir=~/.vim-backup
 set dir=~/.vim-swap
 set hidden
 let g:vim_json_syntax_conceal=0
+let g:jsx_ext_required=0 " Allow JSX in normal JS files
 
 "
 " Search.

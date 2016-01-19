@@ -1,6 +1,6 @@
 . ~/.aliases
 . ~/.git-prompt.sh
 
-export PATH=$PATH:~/.bin:~/.node/node_modules/.bin
+export PATH=$PATH:$HOME/.bin:$HOME/.node/bin/
 export EDITOR=vim
 export PS1='\n\[\e[32m\]\u@\h:\[\e[33m\]\w\[\e[34m\]$(__git_ps1)\[\e[0m\]\n$ '

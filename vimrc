@@ -13,11 +13,12 @@ Plugin 'elzr/vim-json'
 Plugin 'godlygeek/tabular'
 Plugin 'groenewege/vim-less'
 Plugin 'kchmck/vim-coffee-script'
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'mxw/vim-jsx'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'othree/yajs.vim'
+Plugin 'othree/es.next.syntax.vim'
 Plugin 'rschmukler/pangloss-vim-indent'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-markdown'
@@ -64,6 +65,13 @@ set gdefault
 " Indentation.
 "
 set ts=2 sts=2 sw=2 noet
+
+"
+" FileType.
+"
+
+au BufRead,BufNewFile *.{es6,es6.js} set filetype=javascript
+autocmd FileType json setl ts=2 sts=2 sw=2 et
 autocmd FileType coffee setl ts=2 sts=2 sw=2 et
 autocmd FileType gitcommit call setpos('.', [0, 1, 1, 0])
 autocmd Filetype gitcommit setl spell
@@ -133,7 +141,10 @@ imap <silent> <Esc>OH <C-O>:SmartHomeKey<CR>
 cmap w!! %!sudo tee > /dev/null %
 
 " Formats JSON with tabs for indentation.
-command! Json %!json -o json-tab
+command! Json %!json -2
+
+" Copies the buffer to the system clipboard.
+command! Copy %w !xclip -selection clipboard
 
 "
 " Plugins
@@ -141,10 +152,7 @@ command! Json %!json -o json-tab
 
 " CtrlP
 let g:ctrlp_map='<C-p>'
-let g:ctrlp_custom_ignore={
-  \ 'dir':  '\.git$\|node_modules\|build\|dist\|jspm_packages',
-  \ 'file': '\~$'
-  \ }
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
 let g:ctrlp_follow_symlinks=1
 
 " Syntastic

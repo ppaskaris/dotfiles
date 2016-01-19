@@ -38,10 +38,10 @@ else
 fi
 
 # setup the nodes
-modules="grunt-cli gulp-cli http-server eslint babel-eslint eslint-plugin-react react-tools coffee-script coffeelint"
+modules="babel babel-eslint coffee-script coffeelint depcheck eslint eslint-plugin-react grunt-cli gulp-cli http-server js-beautify json jspm less node-inspector react-tools svgo uglifyjs webpack webpack-dev-server"
 if command -v npm >/dev/null 2>&1 ; then
 	mkdir -p ~/.node
-	npm install --prefix ~/.node $modules
+	npm install -g modules
 else
 	echo "skipping npm packages because npm is missing"
 fi

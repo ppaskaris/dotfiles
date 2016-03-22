@@ -9,16 +9,16 @@ Plugin 'gmarik/Vundle.vim'
 
 Plugin 'Raimondi/delimitMate'
 Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'elzr/vim-json'
 Plugin 'godlygeek/tabular'
 Plugin 'groenewege/vim-less'
 Plugin 'kchmck/vim-coffee-script'
-Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'mxw/vim-jsx'
 Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'othree/yajs.vim'
 Plugin 'othree/es.next.syntax.vim'
+Plugin 'othree/yajs.vim'
 Plugin 'rschmukler/pangloss-vim-indent'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-markdown'
@@ -49,8 +49,7 @@ set scrolloff=4
 set backupdir=~/.vim-backup
 set dir=~/.vim-swap
 set hidden
-let g:vim_json_syntax_conceal=0
-let g:jsx_ext_required=0 " Allow JSX in normal JS files
+set ttyfast
 
 "
 " Search.
@@ -70,8 +69,11 @@ set ts=2 sts=2 sw=2 noet
 " FileType.
 "
 
-au BufRead,BufNewFile *.{es6,es6.js} set filetype=javascript
+au BufRead,BufNewFile *.{es6,es6.js} set ft=javascript
+au BufRead,BufNewFile .eslintrc set ft=yaml
+au BufRead,BufNewFile */{.ebextensions,ebextensions}/*.config set ft=yaml
 autocmd FileType json setl ts=2 sts=2 sw=2 et
+autocmd FileType yaml setl ts=2 sts=2 sw=2 et
 autocmd FileType coffee setl ts=2 sts=2 sw=2 et
 autocmd FileType gitcommit call setpos('.', [0, 1, 1, 0])
 autocmd Filetype gitcommit setl spell
@@ -171,3 +173,9 @@ let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=235
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=236
 autocmd VimEnter * :IndentGuidesEnable
+
+" JSON
+let g:vim_json_syntax_conceal=0
+
+" JSX
+let g:jsx_ext_required=0 " Allow JSX in normal JS files

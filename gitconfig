@@ -3,7 +3,6 @@
 	email = patrick@paskaris.gr
 [core]
 	autocrlf = false
-	pager = cat
 	excludesfile = ~/.gitignore
 [alias]
 	addremove = add -A .
@@ -15,7 +14,7 @@
 	com = commit
 	coma = commit -a --amend --no-edit
 	unstage = reset HEAD
-	tree = log --graph --decorate --pretty=oneline --abbrev-commit
+	tree = log --graph --decorate --oneline
 [push]
 	default = current
 [color]
@@ -31,3 +30,5 @@
 	tool = kdiff3
 [fetch]
 	prune = true
+[diff]
+	algorithm = patience

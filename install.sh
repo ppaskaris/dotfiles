@@ -38,7 +38,7 @@ else
 fi
 
 # setup the nodes
-modules="babel babel-eslint coffee-script coffeelint depcheck eslint eslint-plugin-react grunt-cli gulp-cli http-server js-beautify json jspm less node-inspector react-tools svgo uglifyjs webpack webpack-dev-server"
+modules="depcheck eslint http-server js-beautify json svgo"
 if command -v npm >/dev/null 2>&1 ; then
 	mkdir -p ~/.node
 	npm install -g modules

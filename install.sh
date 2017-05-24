@@ -38,7 +38,7 @@ else
 fi
 
 # setup the nodes
-modules="depcheck eslint http-server js-beautify json svgo"
+modules="http-server json"
 if command -v npm >/dev/null 2>&1 ; then
 	mkdir -p ~/.node
 	npm install -g modules

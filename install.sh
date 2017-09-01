@@ -40,8 +40,7 @@ fi
 # setup the nodes
 modules="http-server json"
 if command -v npm >/dev/null 2>&1 ; then
-	mkdir -p ~/.node
-	npm install -g modules
+	npm install -g $modules
 else
 	echo "skipping npm packages because npm is missing"
 fi

@@ -8,3 +8,41 @@ alias git-find="git ls-files -co --exclude-standard"
 mandown () {
 	pandoc -s -f markdown -t man "$1" | man -l -
 }
+
+slugify() {
+	echo -n "$*" \
+		| sed -E 's/\[([^]]+)\]\([^\)]+\): (.+)/\1 \2/' \
+		| iconv -t ascii//TRANSLIT \
+		| sed -E s/[^a-zA-Z0-9]+/-/g \
+		| sed -E s/^-+\|-+$//g \
+		| tr A-Z a-z
+}
+
+git-nuke () {
+
+	BRANCHES=$(git branch --merged master | cut -c 3- | fgrep -v "master")
+
+	if [ "$BRANCHES" = "" ]
+	then
+		return
+	fi
+
+	echo Merged branches:
+	for branch in $BRANCHES
+	do
+		echo "  - $branch"
+	done
+
+	echo
+	read -p "Delete these branches? (y/n) " CONFIRM
+
+	if [ "$CONFIRM" = "y" ]
+	then
+		for branch in $BRANCHES
+		do
+			git branch -d "$branch"
+		done
+	fi
+}
+
+export -f slugify

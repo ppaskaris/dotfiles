@@ -4,9 +4,9 @@
 [core]
 	autocrlf = false
 	excludesfile = ~/.gitignore
+	preloadindex = true
+	fscache = true
 [alias]
-	addremove = add -A .
-	ar = add -A .
 	st = status
 	co = checkout
 	b = branch
@@ -15,6 +15,10 @@
 	coma = commit -a --amend --no-edit
 	unstage = reset HEAD
 	tree = log --graph --decorate --oneline
+	fix = "!fn() { git checkout -b ppaskaris/$(slugify """${*-Buggerino}"""); }; fn"
+	refix = "!fn() { git branch -m ppaskaris/$(slugify """${*-Buggerino}"""); }; fn"
+	stat = diff --shortstat
+	bn = symbolic-ref --short HEAD
 [push]
 	default = current
 [color]
@@ -22,6 +26,8 @@
 [gui]
 	fontui = -family Cantarell -size 11 -weight normal -slant roman -underline 0 -overstrike 0
 	fontdiff = -family \"Liberation Mono\" -size 11 -weight normal -slant roman -underline 0 -overstrike 0
+	tabsize = 4
+	gcwarning = false
 [filter "media"]
 	clean = git media clean %f
 	smudge = git media smudge %f
@@ -31,4 +37,4 @@
 [fetch]
 	prune = true
 [diff]
-	algorithm = patience
+	statGraphWidth = 120

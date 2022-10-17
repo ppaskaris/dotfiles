@@ -1,3 +1,5 @@
+set -x
+
 dotfiles="vimrc gitconfig zshrc3p0"
 for dotfile in $dotfiles ; do
 	ln -nsf ~/dotfiles/$dotfile ~/.$dotfile
@@ -13,7 +15,7 @@ if ! grep -Fxq "source ~/.zshrc3p0" ~/.zshrc ; then
 	echo "source ~/.zshrc3p0" >> ~/.zshrc
 fi
 
-vundir="~/.vim/bundle/Vundle.vim"
+vundir="$HOME/.vim/bundle/Vundle.vim"
 if command -v git >/dev/null 2>&1 ; then
 	if [ -d $vundir ] ; then
 		git -C $vundir pull

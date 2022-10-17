@@ -1,5 +1,6 @@
-# Personal
-export EDITOR="vim"
+export EDITOR=vim
+export CLICOLOR=1
+
 alias kdiff3="/Applications/kdiff3.app/Contents/MacOS/kdiff3"
 alias pngopt="pngquant --force --quality=50-70 --speed=1 --strip"
 alias gpr="git pull --rebase origin main"

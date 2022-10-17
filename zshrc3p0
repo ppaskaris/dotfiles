@@ -1,0 +1,12 @@
+# Personal
+export EDITOR="vim"
+alias kdiff3="/Applications/kdiff3.app/Contents/MacOS/kdiff3"
+alias pngopt="pngquant --force --quality=50-70 --speed=1 --strip"
+alias gpr="git pull --rebase origin main"
+alias gp="git pull --ff-only origin main"
+alias grom="git rebase origin/main"
+alias gfomm="git fetch origin main:master"
+alias gmom="git merge origin/main"
+alias gdom="git diff origin/main"
+
+source ~/dotfiles/zsh_functions/index

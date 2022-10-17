@@ -36,7 +36,7 @@ filetype plugin indent on
 syntax on
 filetype plugin indent on
 set mouse=a
-set clipboard=unnamed
+" set clipboard=unnamed
 set showcmd
 set wildmenu
 set wildmode=list:longest,full

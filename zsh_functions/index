@@ -1,0 +1,4 @@
+export fpath=(~/dotfiles/zsh_functions $fpath)
+
+autoload -Uz slugify
+autoload -Uz jpegopt

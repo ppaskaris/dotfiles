@@ -1,11 +1,6 @@
 [user]
 	name = Patrick Paskaris
-	email = patrick@paskaris.gr
-[core]
-	autocrlf = false
-	excludesfile = ~/.gitignore
-	preloadindex = true
-	fscache = true
+	email = ppaskaris@paskaris.gr
 [alias]
 	st = status
 	co = checkout
@@ -15,26 +10,21 @@
 	coma = commit -a --amend --no-edit
 	unstage = reset HEAD
 	tree = log --graph --decorate --oneline
-	fix = "!fn() { git checkout -b ppaskaris/$(slugify """${*-Buggerino}"""); }; fn"
-	refix = "!fn() { git branch -m ppaskaris/$(slugify """${*-Buggerino}"""); }; fn"
+	fix = !"fn() { source ~/dotfiles/zsh_functions/slugify ; git checkout -b ppaskaris/$(slugify \"$*\"); }; fn"
+	refix = !"fn() { source ~/dotfiles/zsh_functions/slugify ; git branch -m ppaskaris/$(slugify \"$*\"); }; fn"
 	stat = diff --shortstat
 	bn = symbolic-ref --short HEAD
+	rebuild = commit --allow-empty -m 'Trigger build'
+	continue = -c core.editor=true rebase --continue
 [push]
 	default = current
-[color]
-	ui = true
-[gui]
-	fontui = -family Cantarell -size 11 -weight normal -slant roman -underline 0 -overstrike 0
-	fontdiff = -family \"Liberation Mono\" -size 11 -weight normal -slant roman -underline 0 -overstrike 0
-	tabsize = 4
-	gcwarning = false
-[filter "media"]
-	clean = git media clean %f
-	smudge = git media smudge %f
-	required = true
 [merge]
 	tool = kdiff3
 [fetch]
 	prune = true
-[diff]
-	statGraphWidth = 120
+[core]
+	pager = less -F -X
+[mergetool "kdiff3"]
+	path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
+[pull]
+	rebase = false

@@ -1,26 +1,19 @@
-#!/bin/bash
-
-# symlink the dotfiles \o/
-dotfiles="vimrc gitconfig aliases bashrc3p0 inputrc gitignore eslintrc"
+dotfiles="vimrc gitconfig zshrc3p0"
 for dotfile in $dotfiles ; do
 	ln -nsf ~/dotfiles/$dotfile ~/.$dotfile
 done
 
-# get the git-prompt.sh
+mkdir -p ~/.bin
+mkdir -p ~/.vim-backup
+mkdir -p ~/.vim-swap
+
 curl --silent https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -o ~/.git-prompt.sh
 
-# put the bashrc3p0 in the bashrc
-mkdir -p ~/.bin
-if ! grep -Fxq ". ~/.bashrc3p0" ~/.bashrc ; then
-	echo ". ~/.bashrc3p0" >> ~/.bashrc
+if ! grep -Fxq "source ~/.zshrc3p0" ~/.zshrc ; then
+	echo "source ~/.zshrc3p0" >> ~/.zshrc
 fi
 
-# setup the vim folders
-mkdir -p $HOME/.vim-backup
-mkdir -p $HOME/.vim-swap
-
-# setup the vundles
-vundir="$HOME/.vim/bundle/Vundle.vim"
+vundir="~/.vim/bundle/Vundle.vim"
 if command -v git >/dev/null 2>&1 ; then
 	if [ -d $vundir ] ; then
 		git -C $vundir pull
@@ -35,12 +28,4 @@ if command -v vim >/dev/null 2>&1 ; then
 	vim +PluginInstall +qall
 else
 	echo "skipping vundle install because vim is missing"
-fi
-
-# setup the nodes
-modules="http-server json"
-if command -v npm >/dev/null 2>&1 ; then
-	npm install -g $modules
-else
-	echo "skipping npm packages because npm is missing"
 fi

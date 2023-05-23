@@ -3,6 +3,8 @@ export CLICOLOR=1
 
 setopt autolist
 unsetopt menucomplete
+setopt inc_append_history
+setopt share_history
 
 autoload -Uz compinit && compinit
 
@@ -59,5 +61,7 @@ alias grom="git rebase origin/main"
 alias gfomm="git fetch origin main:master"
 alias gmom="git merge origin/main"
 alias gdom="git diff origin/main"
+alias grc="GIT_EDITOR=true git rebase --continue"
+alias gmt="git merge-tool"
 
 source ~/dotfiles/zsh_functions/index
